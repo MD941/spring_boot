@@ -1,7 +1,8 @@
 package algebra.spring_boot.article;
 
+import algebra.spring_boot.article.dto.CreateArticleDto;
+import algebra.spring_boot.article.dto.UpdateArticleDto;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +11,14 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/articles")
-@RequiredArgsConstructor
+
 public class ArticleController {
 
     private final ArticleService articleService;
+
+    public ArticleController(ArticleService articleService) {
+        this.articleService = articleService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Article>> fetchAll(){

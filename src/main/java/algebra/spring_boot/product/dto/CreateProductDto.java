@@ -1,4 +1,4 @@
-package algebra.spring_boot.product;
+package algebra.spring_boot.product.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package algebra.spring_boot.product;
+package algebra.spring_boot.product.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

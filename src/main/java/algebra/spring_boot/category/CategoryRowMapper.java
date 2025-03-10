@@ -1,7 +1,9 @@
 package algebra.spring_boot.category;
 
+import algebra.spring_boot.article.Article;
 import org.springframework.jdbc.core.RowMapper;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
