@@ -7,6 +7,7 @@ import algebra.spring_boot.category.CategoryRepository;
 import org.apache.logging.log4j.util.InternalException;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -71,5 +72,16 @@ public class ArticleServiceImpl implements ArticleService {
                 throw new InternalException("Category not found");
     }
         articleRepository.delete(article.get());
+    }
+
+
+    @Override
+    public List<Article> findByMinMaxPriceAndCategoryId(BigDecimal minPrice, BigDecimal maxPrice, Integer categoryId) {
+        return articleRepository.findByPriceBetweenAndCategoryId(minPrice,maxPrice,categoryId);
+    }
+
+    @Override
+    public List<Article> findByNameOrDescriptionIgnoreCase(String name, String description) {
+        return articleRepository.findByNameOrDescriptionIgnoreCase(name, description);
     }
 }
